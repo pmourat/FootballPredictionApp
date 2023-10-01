@@ -1,4 +1,4 @@
-package com.football.prediction.TeiresiasProphetPredictions;
+package com.football.prediction.TiresiasProphetPredictions;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
