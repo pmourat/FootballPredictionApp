@@ -1,4 +1,4 @@
-package com.football.prediction.TiresiasProphetPredictions.entities;
+package com.football.prediction.TiresiasProphetPredictions.entity;
 
 import lombok.*;
 import org.hibernate.annotations.Type;
@@ -12,9 +12,8 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "league")
-public class League {
-
+@Table(name = "team")
+public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Type(type="org.hibernate.type.UUIDCharType")
@@ -22,4 +21,8 @@ public class League {
 
     @Column(name = "name")
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_league_id")
+    private League league;
 }

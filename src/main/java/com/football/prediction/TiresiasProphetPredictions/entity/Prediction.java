@@ -1,4 +1,4 @@
-package com.football.prediction.TiresiasProphetPredictions.entities;
+package com.football.prediction.TiresiasProphetPredictions.entity;
 
 import com.football.prediction.TiresiasProphetPredictions.enums.Result;
 import lombok.*;
@@ -14,8 +14,8 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "match")
-public class Match {
+@Table(name = "prediction")
+public class Prediction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,19 +23,19 @@ public class Match {
     private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_home_team_id")
-    private Team homeTeamId;
+    @JoinColumn(name = "fk_user_id")
+    private User userId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_away_team_id")
-    private Team awayTeamId;
+    @JoinColumn(name = "fk_match_id")
+    private Match matchId;
 
-    @Column(name = "result")
-    private Result result;
+    @Column(name = "predictedResult")
+    private Result predictedResult;
 
-    @Column(name = "match_date")
-    private LocalDateTime matchDate;
+    @Column(name = "success")
+    private Boolean success;
 
-    @Column(name = "date_updated")
-    private LocalDateTime dateUpdated;
+    @Column(name = "date_created")
+    private LocalDateTime dateCreated;
 }

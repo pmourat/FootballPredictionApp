@@ -1,4 +1,4 @@
-package com.football.prediction.TiresiasProphetPredictions.entities;
+package com.football.prediction.TiresiasProphetPredictions.entity;
 
 import lombok.*;
 import org.hibernate.annotations.Type;

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  teiresias-prophet-predictions:
+    image: teiresias-prophet-predictions
+    ports:
+      - "8080:8080"
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: teiresiasdb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
